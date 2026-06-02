@@ -203,6 +203,13 @@ textarea {
   border-color: var(--red);
 }
 
+.btn-delivery {
+  color: var(--ink);
+  background: var(--yellow);
+  border-color: var(--red);
+  box-shadow: 7px 7px 0 rgba(239, 29, 37, 0.75);
+}
+
 .btn-xl {
   min-height: 62px;
   padding-inline: 26px;
@@ -348,6 +355,89 @@ p {
   min-height: 420px;
 }
 
+.map-card {
+  position: absolute;
+  z-index: 1;
+  top: 54px;
+  left: 0;
+  width: min(56vw, 220px);
+  min-height: 142px;
+  padding: 16px;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    #fff8d7;
+  background-size: 32px 32px;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 8px 8px 0 rgba(255, 212, 0, 0.9);
+  transform: rotate(4deg);
+}
+
+.map-card strong,
+.map-card small {
+  position: relative;
+  z-index: 2;
+  display: block;
+  max-width: 124px;
+  line-height: 1.05;
+}
+
+.map-card strong {
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-size: 1.22rem;
+  text-transform: uppercase;
+}
+
+.map-card small {
+  margin-top: 5px;
+  color: #4a4a4a;
+  font-weight: 900;
+}
+
+.map-pin {
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  background: var(--red);
+  border: 3px solid var(--ink);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.map-pin::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--yellow);
+  border-radius: 50%;
+}
+
+.pin-home {
+  right: 28px;
+  top: 22px;
+}
+
+.pin-store {
+  right: 88px;
+  bottom: 28px;
+  background: var(--green);
+}
+
+.map-route {
+  position: absolute;
+  right: 42px;
+  top: 48px;
+  width: 95px;
+  height: 62px;
+  border-top: 4px dashed var(--red);
+  border-left: 4px dashed var(--red);
+  border-radius: 999px 0 0 0;
+  transform: rotate(-11deg);
+}
+
 .phone-mockup {
   position: relative;
   z-index: 2;
@@ -360,6 +450,96 @@ p {
   box-shadow: 24px 30px 0 rgba(239, 29, 37, 0.8), var(--shadow);
   transform: rotate(-7deg);
   animation: glitchNudge 4s steps(2, end) infinite;
+}
+
+.moto-delivery {
+  position: absolute;
+  z-index: 4;
+  right: 18px;
+  bottom: 64px;
+  width: 170px;
+  height: 118px;
+  transform: rotate(-3deg);
+  filter: drop-shadow(8px 10px 0 rgba(0, 0, 0, 0.4));
+}
+
+.helmet {
+  position: absolute;
+  top: 5px;
+  left: 56px;
+  width: 38px;
+  height: 34px;
+  background: var(--yellow);
+  border: 4px solid var(--ink);
+  border-radius: 50% 50% 45% 45%;
+}
+
+.helmet::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 10px;
+  width: 18px;
+  height: 10px;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.body {
+  position: absolute;
+  top: 40px;
+  left: 54px;
+  width: 42px;
+  height: 38px;
+  background: var(--red);
+  border: 4px solid var(--ink);
+  border-radius: var(--radius);
+  transform: skewX(-10deg);
+}
+
+.delivery-box {
+  position: absolute;
+  top: 30px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 42px;
+  color: var(--ink);
+  background: var(--green);
+  border: 4px solid var(--ink);
+  border-radius: var(--radius);
+  font-family: "Archivo Black", Impact, sans-serif;
+}
+
+.bike-frame {
+  position: absolute;
+  left: 24px;
+  bottom: 23px;
+  width: 115px;
+  height: 38px;
+  border: 6px solid var(--yellow);
+  border-top: 0;
+  transform: skewX(-18deg);
+}
+
+.wheel {
+  position: absolute;
+  bottom: 0;
+  width: 42px;
+  height: 42px;
+  background: #151515;
+  border: 6px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 6px var(--yellow);
+}
+
+.wheel-front {
+  right: 8px;
+}
+
+.wheel-back {
+  left: 18px;
 }
 
 .phone-speaker {
@@ -921,6 +1101,54 @@ p {
 
   .reels-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .map-card {
+    top: 32px;
+    left: -4px;
+    width: 168px;
+    min-height: 118px;
+    padding: 12px;
+  }
+
+  .map-card strong {
+    font-size: 1rem;
+  }
+
+  .moto-delivery {
+    right: -4px;
+    bottom: 52px;
+    width: 138px;
+    height: 96px;
+  }
+
+  .helmet {
+    left: 46px;
+    width: 32px;
+    height: 29px;
+  }
+
+  .body {
+    left: 44px;
+    width: 35px;
+    height: 32px;
+  }
+
+  .delivery-box {
+    width: 42px;
+    height: 36px;
+  }
+
+  .bike-frame {
+    width: 92px;
+    height: 31px;
+  }
+
+  .wheel {
+    width: 35px;
+    height: 35px;
   }
 }
 
