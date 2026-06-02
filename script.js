@@ -95,6 +95,25 @@ const REELS = [
   "Bastidores"
 ];
 
+const PICKUP_AREAS = {
+  ermelino: {
+    label: "Ermelino Matarazzo",
+    baseMinutes: 10
+  },
+  "ponte-rasa": {
+    label: "Ponte Rasa",
+    baseMinutes: 14
+  },
+  itaim: {
+    label: "Itaim Paulista",
+    baseMinutes: 18
+  },
+  penha: {
+    label: "Penha / Cangaíba",
+    baseMinutes: 16
+  }
+};
+
 function whatsappLink(type = "budget") {
   const text = encodeURIComponent(WHATSAPP_MESSAGES[type] || WHATSAPP_MESSAGES.budget);
   return `https://wa.me/${CONFIG.whatsappNumber}?text=${text}`;
@@ -217,7 +236,35 @@ function setupRevealAnimation() {
   sections.forEach((section) => observer.observe(section));
 }
 
+function setupPickupSimulator() {
+  const areaSelect = document.getElementById("area-select");
+  const distanceRange = document.getElementById("distance-range");
+  const distanceLabel = document.getElementById("distance-label");
+  const timeLabel = document.getElementById("time-label");
+  const areaLabel = document.getElementById("area-label");
+
+  if (!areaSelect || !distanceRange || !distanceLabel || !timeLabel || !areaLabel) {
+    return;
+  }
+
+  const updateEstimate = () => {
+    const distance = Number(distanceRange.value);
+    const area = PICKUP_AREAS[areaSelect.value] || PICKUP_AREAS.ermelino;
+    const minimum = area.baseMinutes + Math.round(distance * 2);
+    const maximum = minimum + 10;
+
+    distanceLabel.textContent = `${distance} km`;
+    timeLabel.textContent = `${minimum}-${maximum} min`;
+    areaLabel.textContent = `Retirada estimada em ${area.label}. Confirme disponibilidade pelo WhatsApp.`;
+  };
+
+  areaSelect.addEventListener("change", updateEstimate);
+  distanceRange.addEventListener("input", updateEstimate);
+  updateEstimate();
+}
+
 setConfigContent();
 renderLists();
 setupNavigation();
 setupRevealAnimation();
+setupPickupSimulator();

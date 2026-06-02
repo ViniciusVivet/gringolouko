@@ -47,7 +47,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Assistência na Zona Leste</p>
           <h1>Quebrou o celular? Chama o Gringo Louko.</h1>
-          <p class="hero-subtitle">Troca de tela, bateria, acessórios, películas e celulares novos/seminovos em Ermelino Matarazzo.</p>
+          <p class="hero-subtitle">Troca de tela, bateria, acessórios, películas e celulares novos/seminovos em Ermelino Matarazzo. Agora com retirada combinada pelo WhatsApp.</p>
 
           <div class="hero-actions">
             <a class="btn btn-whatsapp" data-wa="budget" href="#" target="_blank" rel="noopener">Pedir orçamento agora</a>
@@ -63,41 +63,71 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Celular quebrado com motoboy, mapa e selos de atendimento">
+        <div class="hero-visual hero-map-visual" aria-label="Mapa de retirada com lojas Gringo Louko, cliente e motoboy">
           <div class="promo-stamp">Buscamos seu celular</div>
-          <div class="phone-stage">
-            <div class="spark spark-one"></div>
-            <div class="spark spark-two"></div>
-            <div class="map-card" aria-hidden="true">
-              <span class="map-pin pin-home"></span>
-              <span class="map-pin pin-store"></span>
-              <span class="map-route"></span>
-              <span class="map-arrow">Retirada</span>
-              <strong>Sua casa</strong>
-              <small>Buscamos, consertamos e devolvemos</small>
+          <div class="delivery-map">
+            <div class="map-topbar">
+              <span>Área de retirada</span>
+              <strong>Mapa ilustrativo</strong>
             </div>
-            <div class="phone-mockup">
-              <div class="phone-speaker"></div>
-              <div class="broken-screen">
-                <span class="crack crack-a"></span>
-                <span class="crack crack-b"></span>
-                <span class="crack crack-c"></span>
-                <strong>BUSCA<br>E DEVOLVE</strong>
-                <small>Conserto combinado pelo WhatsApp</small>
-              </div>
+            <span class="map-line line-one"></span>
+            <span class="map-line line-two"></span>
+            <span class="map-line line-three"></span>
+            <span class="store-dot store-one"><small>GL</small></span>
+            <span class="store-dot store-two"><small>GL</small></span>
+            <span class="store-dot store-three"><small>GL</small></span>
+            <span class="customer-dot">
+              <small>Você</small>
+            </span>
+            <span class="delivery-route"></span>
+            <div class="map-caption">
+              <strong>Sua casa → Gringo Louko</strong>
+              <span>Busca em casa, conserta e devolve combinado no WhatsApp</span>
             </div>
-            <div class="moto-delivery" aria-hidden="true">
-              <div class="helmet"></div>
-              <div class="body"></div>
-              <div class="delivery-box">GL</div>
-              <div class="bike-frame"></div>
-              <div class="wheel wheel-front"></div>
-              <div class="wheel wheel-back"></div>
-            </div>
-            <div class="tool-badge">Troca de tela</div>
-            <div class="tool-badge badge-red">iPhone e Android</div>
-            <div class="tool-badge badge-green">Retirada ou entrega</div>
           </div>
+          <div class="map-phone-card">
+            <div class="phone-mini-screen">
+              <span class="crack crack-a"></span>
+              <strong>BUSCA<br>E DEVOLVE</strong>
+              <small>Seu celular volta pronto pro corre</small>
+            </div>
+          </div>
+          <div class="moto-delivery map-moto" aria-hidden="true">
+            <div class="helmet"></div>
+            <div class="body"></div>
+            <div class="delivery-box">GL</div>
+            <div class="bike-frame"></div>
+            <div class="wheel wheel-front"></div>
+            <div class="wheel wheel-back"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pickup-simulator section-reveal" id="simulador">
+        <div class="simulator-copy">
+          <p class="eyebrow">Simule a retirada</p>
+          <h2>Quanto tempo até buscar seu celular?</h2>
+          <p>Escolha uma região próxima e ajuste a distância para sentir a logística de retirada. É uma estimativa visual: confirme disponibilidade e rota pelo WhatsApp.</p>
+        </div>
+        <div class="simulator-panel">
+          <label for="area-select">Onde você está?</label>
+          <select id="area-select">
+            <option value="ermelino">Ermelino Matarazzo</option>
+            <option value="ponte-rasa">Ponte Rasa</option>
+            <option value="itaim">Itaim Paulista</option>
+            <option value="penha">Penha / Cangaíba</option>
+          </select>
+
+          <label for="distance-range">Distância aproximada</label>
+          <input id="distance-range" type="range" min="1" max="12" value="4">
+
+          <div class="estimate-card">
+            <span id="distance-label">4 km</span>
+            <strong id="time-label">18-28 min</strong>
+            <small id="area-label">Retirada estimada em Ermelino Matarazzo</small>
+          </div>
+
+          <a class="btn btn-whatsapp" data-wa="delivery" href="#" target="_blank" rel="noopener">Confirmar retirada pelo WhatsApp</a>
         </div>
       </section>
 
