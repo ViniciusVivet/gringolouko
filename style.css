@@ -375,12 +375,27 @@ p {
   transform: rotate(4deg);
 }
 
+.map-card::after {
+  content: "Gringo Louko";
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 2;
+  max-width: 86px;
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 1000;
+  line-height: 1;
+  text-align: right;
+  text-transform: uppercase;
+}
+
 .map-card strong,
 .map-card small {
   position: relative;
   z-index: 2;
   display: block;
-  max-width: 124px;
+  max-width: 128px;
   line-height: 1.05;
 }
 
@@ -393,6 +408,7 @@ p {
 .map-card small {
   margin-top: 5px;
   color: #4a4a4a;
+  font-size: 0.76rem;
   font-weight: 900;
 }
 
@@ -428,14 +444,43 @@ p {
 
 .map-route {
   position: absolute;
-  right: 42px;
-  top: 48px;
-  width: 95px;
-  height: 62px;
-  border-top: 4px dashed var(--red);
-  border-left: 4px dashed var(--red);
+  right: 37px;
+  top: 43px;
+  width: 112px;
+  height: 70px;
+  border-top: 5px dashed var(--red);
+  border-left: 5px dashed var(--red);
   border-radius: 999px 0 0 0;
-  transform: rotate(-11deg);
+  transform: rotate(-12deg);
+}
+
+.map-route::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  bottom: -4px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 16px solid var(--red);
+  transform: rotate(-28deg);
+}
+
+.map-arrow {
+  position: absolute;
+  z-index: 4;
+  right: 56px;
+  top: 63px;
+  padding: 4px 7px;
+  color: var(--white);
+  background: var(--red);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  font-size: 0.68rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  transform: rotate(-13deg);
 }
 
 .phone-mockup {
@@ -577,7 +622,7 @@ p {
   z-index: 1;
   color: var(--yellow);
   font-family: "Archivo Black", Impact, sans-serif;
-  font-size: clamp(2rem, 11vw, 3.8rem);
+  font-size: clamp(1.75rem, 9vw, 3.25rem);
   line-height: 0.92;
   text-shadow: 4px 4px 0 var(--red);
 }
@@ -587,6 +632,7 @@ p {
   z-index: 1;
   margin-top: 14px;
   font-weight: 900;
+  line-height: 1.15;
   text-transform: uppercase;
 }
 
